@@ -4,7 +4,6 @@
 
 __datamodel-codegen() {
 	_arguments \
-		'(- 1 *)-h[display usage information]' \
 		-h"[Show help message and exit]" \
 		--help"[Show help message and exit]" \
 		--input"[Input file/directory (default: stdin)]" \
