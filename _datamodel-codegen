@@ -1,0 +1,57 @@
+# zsh completion for datamodel-codegen
+# https://koxudaxi.github.io/datamodel-code-generator/
+#compdef datamodel-codegen
+
+__datamodel-codegen() {
+	_arguments \
+		'(- 1 *)-h[display usage information]' \
+		-h"[Show help message and exit]" \
+		--help"[Show help message and exit]" \
+		--input"[Input file/directory (default: stdin)]" \
+		--url"[Input file URL. --input is ignored when --url is used]" \
+		--http-headers"[Set headers in HTTP requests to the remote host.]" \
+		--http-ignore-tls"[Disable verification of the remote host's TLS certificate]" \
+		--input-file-type"[Input file type: auto,openapi,jsonschema,json,yaml,dict,csv. default: auto]" \
+		--openapi-scopes"[Scopes of OpenAPI model generation <schemas,paths>]" \
+		--output"[Output file (default: stdout)]" \
+		--base-class"[Base Class (default: pydantic.BaseModel)]" \
+		--field-constraints"[Use field constraints and not con* annotations]" \
+		--use-annotated"[Use typing.Annotated for Field(). Also, --field-]" \
+		--field-extra-keys"[Add extra keys to field parameters]" \
+		--field-include-all-keys"[Add all keys to field parameters]" \
+		--snake-case-field"[Change camel-case field name to snake-case]" \
+		--strip-default-none"[Strip default None on fields]" \
+		--use-default"[Use default value even if a field is required]" \
+		--force-optional"[Force optional for required fields]" \
+		--strict-nullable"[Treat default field as a non-nullable field (Only OpenAPI)]" \
+		--strict-types"[Use strict types <str,bytes,int,float,bool>]" \
+		--disable-timestamp"[disable timestamp on file headers]" \
+		--use-standard-collections"[Use standard collections for type hinting (list, dict)]" \
+		--use-schema-description"[Use schema description to populate class docstring]" \
+		--reuse-model"[Re-use models on the field when a module has the model with the same content]" \
+		--set-default-enum-member"[Set enum members as default values for enum field]" \
+		--empty-enum-field-name"[Set field name when enum value is empty]" \
+		--use-subclass-enum"[Define Enum class as subclass with field type when enum has type < int, float, bytes, str >]" \
+		--class-name"[Set class name of root model]" \
+		--use-title-as-name"[use titles as class names of models]" \
+		--custom-template-dir"[Custom template directory]" \
+		--extra-template-data"[Extra template data]" \
+		--aliases"[Alias mapping file]" \
+		--target-python-version"[target python version (default: 3.7)]" \
+		--validation"[Enable validation (Only OpenAPI)]" \
+		--use-double-quotes"[Model generated with double quotes.]" \
+		--encoding"[The encoding of input and output (default: UTF-8)]" \
+		--debug"[show debug message]" \
+		--version"[show version]" \
+		--wrap-string-literal"" \
+		--original-field-name-delimiter"" \
+		--disable-appending-item-suffix"" \
+		--use_non_positive_negative_number_constrained_types"" \
+		--allow-population-by-field-name"" \
+		--enum-field-as-literal"" \
+		--enable-faux-immutability"" \
+		--use-generic-container-types"" \
+		'*:filename:_files'
+}
+
+__datamodel-codegen
